@@ -89,7 +89,7 @@ def _get_replaybuffer_config(parser: argparse.ArgumentParser):
         --buffer-size <int>
             the maximum storage in the buffer.
         --use-proper-time-limits
-            by default, the return value does consider limits of time. If set, compute returns with considering time limits factor.
+            by default, the return value doesn't consider limits of time. If set, compute returns with considering time limits factor.
         --use-gae
             by default, use generalized advantage estimation. If set, do not use gae.
         --gae-lambda <float>
@@ -247,7 +247,7 @@ def _get_save_config(parser: argparse.ArgumentParser):
     """
     group = parser.add_argument_group("Save parameters")
     group.add_argument("--save-interval", type=int, default=1,
-                       help="time duration between contiunous twice models saving. (default 1)")
+                       help="time duration between saves of both actor and critic models. (default 1)")
     return parser
 
 
